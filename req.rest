@@ -1,0 +1,22 @@
+GET http://localhost:3001/products
+
+###
+GET http://localhost:3001/merchant
+
+###
+POST http://localhost:3001/merchant
+Content-Type: application/json
+
+{
+"name": "Nurwan1",
+"password": "password1"
+}
+
+###
+POST http://localhost:3001/merchant/login
+Content-Type: application/json
+
+{
+"name": "David",
+"password": "323210"
+}
