@@ -41,16 +41,16 @@ export const authMerchant = async (req, res) => {
     try {
         const user = await Merchant.findOne( { where: {name : req.body.name}})
         if (user==null) {
-            return res.status(400).send('Cannot find user')
+            return res.status(404).send('Cannot find user')
         }
         else {  
             const user = await Merchant.findOne( { where: {password : req.body.password}})
         if (user) {
-            return res.status(400).send('Succesfull') }
+            return res.status(200).send('Succesfull') }
          else {
-        res.send("Not Allowed")
+        res.status(401).send('User Unauthorize')
         }
     }}  catch {
-       res.status(500).send()
+       res.status(400).send()
     } }
 
